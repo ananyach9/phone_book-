@@ -1,0 +1,32 @@
+<header><b>
+        RM-PHONEBOOK</b>
+</header>
+<div class="md-form mt-0">
+    <input class="form-control " type="text" placeholder="Search" aria-label="Search">
+</div>
+{{#each list}}
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne">
+                    {{this.name}}
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                {{this.dob}}<br>
+                {{this.mobile}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{this.email}}
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-info"><a href="/phone/{{this._id}}">Edit</a></button>
+    <button type="button" class="btn btn-danger"><a href="/phone/delete/{{this._id}}"
+            onClick="return confirm('Are you sure you want to delete this contact?');">
+            Delete</a></button>
+</div>
+{{/each}}
+<a class="btn btn-secondary" href="/phone"><i class="fa fa-plus"></i></a>

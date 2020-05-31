@@ -1,0 +1,33 @@
+<h3>{{viewTable}}</h3>
+<form action="/phone" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{phone._id}}"/>
+    <div class="form-group row">
+        <label>Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Name" value="{{phone.name}}" />
+        <div class="text-danger">
+          {{phone.nameError}}
+        </div>
+    </div>
+      <div class="form-group row">
+        <label>DOB</label>
+        <input type="text" class="form-control" name="dob" placeholder="dd/mm/yyyy" value="{{phone.dob}}">
+    </div>
+      <div class="form-group row">
+        <label>Mobile Number</label>
+        <input type="text" class="form-control" name="mobile" placeholder="+91 XXXXXXXXXX" value="{{phone.mobile}}"/>
+    {{!-- <div class="text-danger">
+          {{phone.mobileError}}
+        </div> --}}
+    </div>
+      <div class="form-group row">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" placeholder="abc@gmail.com" value="{{phone.email}}"/>
+    <div class="text-danger">
+          {{phone.emailError}}
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-info">Save</button>
+        <a class="btn btn-secondary" href="/phone/list" >View Contact </a>
+    </div>
+</form>
